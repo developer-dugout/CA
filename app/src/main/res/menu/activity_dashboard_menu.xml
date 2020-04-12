@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/careers_stands">
+            <menu>
+                <item
+                    android:id="@+id/home"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/home"
+                    />
+                <item
+                    android:id="@+id/user_import"
+                    android:icon="@drawable/ic_import"
+                    android:title="@string/profile"
+                    />
+                <item
+                    android:id="@+id/user_govt_sector"
+                    android:icon="@drawable/ic_govt_sector"
+                    android:title="@string/admin_access"
+                    />
+                <item
+                    android:id="@+id/user_pvt_sector"
+                    android:icon="@drawable/ic_pvt_sector"
+                    android:title="@string/messages"
+                    />
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/ic_setings"
+                    android:title="@string/logout"
+                    />
+                <item
+                    android:id="@+id/feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:title="@string/rate_us"
+                    />
+            </menu>
+        </item>
+    </group>
+    <item
+        android:title="@string/conditions"
+        >
+        <menu>
+            <item
+                android:id="@+id/security"
+                android:icon="@drawable/ic_security"
+                android:title="@string/security"
+                />
+            <item
+                android:id="@+id/share_with"
+                android:icon="@drawable/ic_share_with"
+                android:title="@string/share"
+                />
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/ic_help"
+                android:title="@string/help"
+                />
+        </menu>
+
+    </item>
+
+</menu>

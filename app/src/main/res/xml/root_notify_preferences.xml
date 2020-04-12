@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <SwitchPreferenceCompat
+        app:dependency="sync"
+        app:title="Conversation tones"
+        android:summary="Play sounds for incoming and outgoing messages"
+        />
+    <PreferenceCategory
+        app:title="Messages"
+        android:icon="@drawable/ic_notify_messages_settings"
+        >
+        <ListPreference
+            app:defaultValue="notify_tones"
+            app:key="notify_tones"
+            app:title="Notification tone"
+            android:summary="Default ringtone(Played)"
+            app:useSimpleSummaryProvider="true"
+            />
+        <ListPreference
+            app:defaultValue="vibrate"
+            app:entries="@array/vibrate_entries"
+            app:entryValues="@array/vibrate_values"
+            app:key="vibrate"
+            app:title="Vibrate"
+            app:useSimpleSummaryProvider="true"
+            />
+        <ListPreference
+            app:defaultValue="popup_notify"
+            app:entries="@array/notify_popup_entries"
+            app:entryValues="@array/notify_popup_values"
+            app:key="popup_notify"
+            app:title="Popup notification"
+            app:useSimpleSummaryProvider="true"
+            />
+        <ListPreference
+            app:defaultValue="notify_light"
+            app:entries="@array/notify_light_entries"
+            app:entryValues="@array/notify_light_values"
+            app:key="notify_light"
+            app:title="Light"
+            app:useSimpleSummaryProvider="true"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Theme Changer"
+        android:icon="@drawable/ic_theme_changer"
+        >
+
+    </PreferenceCategory>
+</PreferenceScreen>

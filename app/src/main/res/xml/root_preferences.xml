@@ -1,0 +1,94 @@
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <PreferenceCategory app:title="@string/messages_header"
+        android:icon="@drawable/messenger_bubble_large_blue"
+        >
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/signature_title"
+            app:useSimpleSummaryProvider="true"
+            />
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="@string/reply_title"
+            app:useSimpleSummaryProvider="true"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/sync_header"
+        android:icon="@drawable/ic_sync_state"
+        >
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title"
+            />
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Theme Changer"
+        android:icon="@drawable/ic_theme_changer"
+        >
+        <CheckBoxPreference
+            app:key="sync"
+            app:title="Enable Dark Mode"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Display"
+        android:icon="@drawable/ic_display"
+        >
+        <ListPreference
+            app:defaultValue="display"
+            app:entries="@array/display_entries"
+            app:entryValues="@array/display_values"
+            app:key="display"
+            app:title="Display setting options"
+            app:useSimpleSummaryProvider="true"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Notifications"
+        android:icon="@drawable/ic_notifications"
+        >
+        <PreferenceScreen
+            app:key="notify_settings"
+            android:title="Message, Blog, Careers, Jobs">
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Location"
+        android:icon="@drawable/ic_location"
+        >
+        <ListPreference
+            app:defaultValue="location"
+            app:entries="@array/location_entries"
+            app:entryValues="@array/location_values"
+            app:key="location"
+            app:title="Select your country"
+            app:useSimpleSummaryProvider="true"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Accessibility"
+        android:icon="@drawable/ic_accessibility"
+        >
+        <PreferenceScreen
+            app:key="notify_accesses"
+            android:title="Websites, Blog's, Pages, Apps">
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Version &amp; Ratings"
+        android:icon="@drawable/ic_version"
+        >
+        <Preference
+            android:title="@string/career_adviser"
+            android:summary="Copyright-2020 : Version-2.1 : ratings-48.7K"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

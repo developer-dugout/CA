@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">CA</string>
+    <string name="app_name_slogan">urgent messages</string>
+
+    <string name="give_correct_information">Please your give correct information. Because, your email &amp; phone number needs to be verification.</string>
+
+    <!-- My Common Strings -->
+    <string name="student_name">Aamir Latif</string>
+    <string name="copyright">Developers © 2020</string>
+    <string name="profile_settings">My Profile</string>
+    <string name="theaamirbd">TheAamirBD</string>
+    <string name="log_in">Log In</string>
+    <string name="log_out">Log Out</string>
+    <string name="profile">Import</string>
+    <string name="friends">Friends</string>
+    <string name="about_app">About App</string>
+    <string name="all_peoples">Peoples</string>
+    <string name="all_friends">Friends</string>
+
+
+    <!-- Slider Screen Strings -->
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">START</string>
+    <string name="title_slide1">Career Adviser©</string>
+    <string name="desc_slide1">you can find a large number of people to build up your career.</string>
+    <string name="title_slide2">No Cost</string>
+    <string name="desc_slide2">CA(Career Adviser©)\nIts completely FREE of cost, no subscription fees.</string>
+    <string name="title_slide3">Chatting</string>
+    <string name="desc_slide3">fully one to one personal chatting system.</string>
+    <string name="title_slide4">Secure</string>
+    <string name="desc_slide4">CA(Career Adviser©)\n Keeps your career profile secure forever.</string>
+
+
+    <!-- About App Strings -->
+    <string name="varsity_name">MicroStarX</string>
+    <string name="instructor1_name">Aamir Latif</string>
+    <string name="instructor_name">Android Developer</string>
+    <string name="about_text">This application is built for learning purpose.\nProject Source Code Link-</string>
+    <string name="project_git_link"><u>https://github.com/developer-dugout</u></string>
+    <string name="about_app_detail">x</string>
+    <string name="student_id_details">Computer Science &amp; Software Engineering\nID: 2015-GCUF-2019</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Social auth strings for connection -->
+    <string name="facebook_app_id">3285511318144122</string>
+    <string name="fb_login_protocol_scheme">fb3285511318144122</string>
+
+    <!-- Remove or change this placeholder text -->
+    <string name="on_internet_msg">No internet connection! Please check internet.</string>
+    <string name="menu_search">Search</string>
+    <string name="register_success_popup">Registered successfully.\nVerification email has been sent.\nPlease verify email.</string>
+    <string name="recheck_gender">To save your changes, please check/recheck your GENDER.</string>
+
+    <string-array name="spinerViewPeople">
+        <item>Default</item>
+        <item>Name</item>
+        <item>Date</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="jobs_fragment">Jobs fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="career_fragment">Careers fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home fragment</string>
+    <string name="username">Username</string>
+    <string name="write_your_status_here">User Status</string>
+    <string name="home">Home</string>
+    <string name="admin_access">Govt Sector</string>
+    <string name="messages">Private Sector</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="logout">Settings</string>
+    <string name="conditions">CONDITIONS</string>
+    <string name="navigation_drawer_open">Open Drawer</string>
+    <string name="navigation_drawer_close">Close Drawer</string>
+    <string name="developed_by">developed by-</string>
+    <string name="https_www_microstarx_net">https://www.microstarx.net</string>
+    <string name="developer_dugout">Career Adviser©</string>
+    <string name="careers_stands">CAREERS STANDS</string>
+    <string name="share">Share</string>
+    <string name="help">Help</string>
+    <string name="security">Security</string>
+    <string name="career_adviser">Career Adviser©</string>
+    <string name="please_select_some_stars_and_give_your_feedback">please select some stars and give your feedback</string>
+    <string name="very_bad">VERY BAD</string>
+    <string name="excellent">EXCELLENT</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="new_here_create_an_account">New here? Create an account</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="update_blog_on">update blog on</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="blog_description">Blog Description</string>
+    <string name="_0_likes">Likes</string>
+    <string name="write_post_quote">blog post description</string>
+    <string name="post_now">POST NOW</string>
+    <string name="update">Update</string>
+    <string name="update_your_status">Update your status...</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="last_date_for_apply_on_this_available_opportunity_is_30_6_2020">Last date for apply on this available opportunity is 30-6-2020</string>
+</resources>

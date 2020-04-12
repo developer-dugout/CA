@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginReg.FBLoginActivity"
+    >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/start_logo"
+        android:layout_above="@id/fb_user_name"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        />
+    <TextView
+        android:id="@+id/fb_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="150dp"
+        android:hint="@string/username"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColorHint="@android:color/black"
+        android:textColor="@android:color/black"
+        android:layout_centerInParent="true"
+        />
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/FB_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fb_user_name"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        />
+</RelativeLayout>

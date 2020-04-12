@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1048755280180",
+    "firebase_url": "https://careeradviser.firebaseio.com",
+    "project_id": "careeradviser",
+    "storage_bucket": "careeradviser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048755280180:android:0176397759578b0c496d61",
+        "android_client_info": {
+          "package_name": "com.coding.pixel.ca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048755280180-37trrid31be8g658h3enhgjkd3eg4i1f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coding.pixel.ca",
+            "certificate_hash": "52aff9573392d3134c3a037129758a13bab66950"
+          }
+        },
+        {
+          "client_id": "1048755280180-u321a2fu77lm4697rj6hs93lrhqk73e3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXKtEwNAF7jDRot1BzLkyBadXptT03M3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048755280180-u321a2fu77lm4697rj6hs93lrhqk73e3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
