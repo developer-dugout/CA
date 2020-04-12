@@ -3,19 +3,20 @@ Android software development is the process by which new applications are create
 
 Android is an open-source and Linux-based operating system for mobile devices such as smartphones and tablet computers. ... This tutorial will teach you basic Android programming and will also take you through some advance concepts related to Android application development.
 
-# Contents of using this App:
+## Contents of using this App:
 Introduction. There are four main Android app components: 
 1- Activities 
 2- Services 
 3- Content Providers 
 4- Broadcast Receivers.
 
+## Android Learning tutorials:
 Android Studio Learning Urdu tutorials: 
 https://www.youtube.com/watch?v=rMGLvG2_p5I&list=PLiIcHysmS5mKArjAky_lSbxiywOmuZ9ql
 Android Studio Learning English tutorials: 
 https://www.youtube.com/watch?v=djP-ZXMRNfA&list=PLiIcHysmS5mJAw_GkydnvWaZrAQMMJcVa
 
-# Questions About the tutorials are made:
+## Questions About the tutorials are made:
 What is an activity in android studio?
 What is Intent in Android?
 How Intent is related or relationship with activities?
