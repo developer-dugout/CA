@@ -318,6 +318,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.security:
             case R.id.share_with:
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "https://www.fiverr.com/techroof?up_rollout=true");
+                shareIntent.setType("text/plain");
+                startActivity(Intent.createChooser(shareIntent, "Share via : "));
+                break;
             case R.id.help:
 
                 break;
