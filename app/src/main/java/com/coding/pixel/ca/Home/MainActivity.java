@@ -30,7 +30,9 @@ import android.widget.Toast;
 import com.coding.pixel.ca.AboutUs.AboutAppActivity;
 import com.coding.pixel.ca.Adapter.TabsPagerAdapter;
 import com.coding.pixel.ca.Dashboard.RatingActivity;
+import com.coding.pixel.ca.ForgotPswrd.ForgotPasswordActivity;
 import com.coding.pixel.ca.Friends.FriendsActivity;
+import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
 import com.coding.pixel.ca.PostsActivities.BlogPostActivity;
@@ -317,6 +319,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(feedbackIntent);
                 break;
             case R.id.security:
+                Intent securityIntent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+                startActivity(securityIntent);
+                break;
             case R.id.share_with:
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
@@ -325,7 +330,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(Intent.createChooser(shareIntent, "Share via : "));
                 break;
             case R.id.help:
-
+                Intent helpIntent = new Intent(MainActivity.this, HelpingActivity.class);
+                startActivity(helpIntent);
                 break;
         }
     }
