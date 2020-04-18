@@ -44,7 +44,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         mToolbar = findViewById(R.id.fp_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Reset Password");
+        getSupportActionBar().setTitle("Security threat");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

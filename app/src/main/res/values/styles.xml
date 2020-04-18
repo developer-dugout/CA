@@ -28,5 +28,9 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="bgc">#2B3540</item>
+        <item name="tc">#fff</item>
+    </style>
 
 </resources>

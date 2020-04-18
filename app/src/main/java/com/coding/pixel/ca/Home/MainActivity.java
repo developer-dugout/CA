@@ -23,6 +23,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ import com.coding.pixel.ca.PostsActivities.BlogPostActivity;
 import com.coding.pixel.ca.ProfileSetting.SettingsActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.Search.SearchActivity;
+import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -133,7 +135,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             {
                 if (dataSnapshot.exists())
                 {
-
                     if (dataSnapshot.hasChild("user_name"))
                     {
                         String userName = dataSnapshot.child("user_name").getValue().toString();
@@ -319,8 +320,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(feedbackIntent);
                 break;
             case R.id.security:
-                Intent securityIntent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
-                startActivity(securityIntent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
+                builder.setTitle("Security threat & Policies :");
+                builder.setMessage("From day one, I'm built Career Adviser© to help you stay in touch with career and friends. Share vital information during new opportunities and seek a better life. Some of your most personal moments are shared with this plate-form. Chat with friends and share your thoughts with messages like photos, videos or other data as well.");
+
+                builder.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        Intent forwardMainIntent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+                        startActivity(forwardMainIntent);
+                    }
+                });
+                builder.setNegativeButton("Learn More", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        Intent backMainIntent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(backMainIntent);
+                    }
+                });
+
+                /*AlertDialog dialog = builder.create();
+                dialog.show();
+
+                Button b = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+                if (b != null)
+                {
+                    b.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_background));
+                }*/
+
+                builder.show();
                 break;
             case R.id.share_with:
                 Intent shareIntent = new Intent();

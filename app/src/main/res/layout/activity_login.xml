@@ -26,17 +26,18 @@
                 android:layout_marginTop="01dp"
                 android:layout_marginBottom="10dp"
                 />
+
             <TextView
                 android:id="@+id/logo_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/career_adviser"
-                android:textSize="30sp"
                 android:layout_marginBottom="15dp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
                 android:gravity="center"
-                />
+                android:text="@string/career_adviser"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

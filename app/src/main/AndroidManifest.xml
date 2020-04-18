@@ -12,7 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Helping.HelpingActivity"></activity>
+        <activity android:name=".WebLinks.AppInfoActivity"></activity>
+        <activity android:name=".WebLinks.WebTermsConditionsActivity" />
+        <activity android:name=".WebLinks.WebContactUsActivity" />
+        <activity android:name=".WebLinks.WebFaqActivity" />
+        <activity
+            android:name=".Helping.HelpingActivity"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".Home.MainActivity" />
         <activity android:name=".Comments.BlogCommentsActivity" />
         <activity android:name=".PostsActivities.BlogPostActivity" />
         <activity
