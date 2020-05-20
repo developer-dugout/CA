@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.coding.pixel.ca.Chats.ChatActivity;
 import com.coding.pixel.ca.Model.Friends;
 import com.coding.pixel.ca.Profile.ProfileActivity;
 import com.coding.pixel.ca.R;
@@ -127,7 +128,7 @@ public class FriendsActivity extends AppCompatActivity {
                                             // user active status validation
                                             if (dataSnapshot.child("active_now").exists()){
 
-                                                Intent chatIntent = new Intent(FriendsActivity.this, FriendsActivity.class);
+                                                Intent chatIntent = new Intent(FriendsActivity.this, ChatActivity.class);
                                                 chatIntent.putExtra("visitUserId", userID);
                                                 chatIntent.putExtra("userName", userName);
                                                 startActivity(chatIntent);

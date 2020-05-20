@@ -131,6 +131,6 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="last_date_for_apply_on_this_available_opportunity_is_30_6_2020">Last date for apply on this available opportunity is 30-6-2020</string>
     <string name="user_name">user_name</string>
-    <string name="update_post_on">update_post_on</string>
-    <string name="post_description">post_description</string>
+    <string name="update_post_on">update post</string>
+    <string name="post_description">Latest Jobs are available on different post, apply on their interest and get your dreams,</string>
 </resources>

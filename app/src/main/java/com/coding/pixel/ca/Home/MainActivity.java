@@ -41,6 +41,7 @@ import com.coding.pixel.ca.ProfileSetting.SettingsActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.Search.SearchActivity;
 import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CircleImageView NavProfileView;
     private TextView getUserName;
     private TextView getUserStatus;
+    private FloatingActionButton userMsgBtn;
 
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
@@ -94,6 +96,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             userDatabaseReference = FirebaseDatabase.getInstance().getReference()
                     .child("users").child(user_uID);
         }
+        userMsgBtn = findViewById(R.id.user_message);
+        userMsgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent messageIntent = new Intent(MainActivity.this, FriendsActivity.class);
+                startActivity(messageIntent);
+            }
+        });
 
         /**
          * Tabs >> Viewpager for MainActivity
