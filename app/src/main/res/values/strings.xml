@@ -133,4 +133,7 @@
     <string name="user_name">user_name</string>
     <string name="update_post_on">update post</string>
     <string name="post_description">Latest Jobs are available on different post, apply on their interest and get your dreams,</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
