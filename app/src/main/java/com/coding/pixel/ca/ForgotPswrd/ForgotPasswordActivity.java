@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -97,6 +98,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Copyright text
+        TextView copyrightTV2 = findViewById(R.id.copyrightTV2);
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        copyrightTV2.setText("CA © " + year);
 
     }
 

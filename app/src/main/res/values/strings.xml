@@ -136,4 +136,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="security_Info">Career Adviser app security is the extent of protection that mobile device applications (apps) have from Malware and the activities of crackers and other criminals. The term can also refer to various technologies and production practices that minimize the risk of exploits to mobile devices through their apps.</string>
+    <string name="registered_email">Registered Email</string>
+    <string name="public_posts">Public Posts</string>
 </resources>

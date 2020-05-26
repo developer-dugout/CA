@@ -36,7 +36,9 @@ import com.coding.pixel.ca.Friends.FriendsActivity;
 import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
+import com.coding.pixel.ca.Notification.NotificationActivity;
 import com.coding.pixel.ca.PostsActivities.BlogPostActivity;
+import com.coding.pixel.ca.PostsActivities.PostShownActivity;
 import com.coding.pixel.ca.ProfileSetting.SettingsActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.Search.SearchActivity;
@@ -241,15 +243,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         finish();
     }
 
-
     // tool bar action menu
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         if (item.getItemId() == R.id.notifications){
-            //Intent intent =  new Intent(MainActivity.this, SearchActivity.class);
-            //startActivity(intent);
+            Intent intent =  new Intent(MainActivity.this, NotificationActivity.class);
+            startActivity(intent);
         }
         if (item.getItemId() == R.id.menu_search){
             Intent intent =  new Intent(MainActivity.this, SearchActivity.class);
@@ -263,6 +264,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (item.getItemId() == R.id.all_friends){
             Intent intent =  new Intent(MainActivity.this, FriendsActivity.class);
+            startActivity(intent);
+        }
+
+        if (item.getItemId() == R.id.all_public_posts){
+            Intent intent =  new Intent(MainActivity.this, PostShownActivity.class);
             startActivity(intent);
         }
 
@@ -391,7 +397,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             {
                 if (i == 0)
                 {
-                    Intent findIntent = new Intent(MainActivity.this, RatingActivity.class);
+                    Intent findIntent = new Intent(MainActivity.this, BlogPostActivity.class);
                     startActivity(findIntent);
                 }
                 if (i == 1)

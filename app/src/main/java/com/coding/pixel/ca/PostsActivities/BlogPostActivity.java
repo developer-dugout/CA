@@ -210,7 +210,7 @@ public class BlogPostActivity extends AppCompatActivity {
                                 {
                                     if(task.isSuccessful())
                                     {
-                                        SendUserToMainActivity();
+                                        SendUserToPublicPostActivity();
                                         Toast.makeText(BlogPostActivity.this, "New Post is updated successfully.", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
                                     }
@@ -258,12 +258,13 @@ public class BlogPostActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == android.R.id.home)
         {
-            SendUserToMainActivity();
+            SendUserToPublicPostActivity();
         }
         return super.onOptionsItemSelected(item);
     }
-    private void SendUserToMainActivity()
+    private void SendUserToPublicPostActivity()
     {
-        startActivity(new Intent(BlogPostActivity.this, MainActivity.class));
+        startActivity(new Intent(BlogPostActivity.this, PostShownActivity.class));
+        finish();
     }
 }
