@@ -386,11 +386,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         CharSequence[] options = new CharSequence[]
                 {
                         "POST BLOG",
-                        "POST CAREERS",
-                        "POST JOBS"
                 };
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Create Post For");
+        builder.setTitle("Create Public Post");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i)
@@ -400,7 +398,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent findIntent = new Intent(MainActivity.this, BlogPostActivity.class);
                     startActivity(findIntent);
                 }
-                if (i == 1)
+               /* if (i == 1)
                 {
                     //Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
                     //startActivity(returnIntent);
@@ -409,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     //Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
                     //startActivity(returnIntent);
-                }
+                }*/
             }
         });
         builder.show();

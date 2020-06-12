@@ -21,7 +21,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Notification.NotificationActivity"></activity>
+        <activity android:name=".GovtAndPvtSector.PrivateSectorActivity"></activity>
+        <activity android:name=".GovtAndPvtSector.GovtSectorActivity" />
+        <activity android:name=".Notification.NotificationActivity" />
         <activity
             android:name=".PostsActivities.PostShownActivity"
             android:parentActivityName=".Home.MainActivity" />

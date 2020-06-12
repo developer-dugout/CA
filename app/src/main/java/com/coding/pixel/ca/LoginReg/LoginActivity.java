@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.telecom.Call;
 import android.text.TextUtils;
@@ -200,6 +202,16 @@ public class LoginActivity extends AppCompatActivity {
 
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
 
+            /*GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
+            if (acct != null) {
+                String personName = acct.getDisplayName();
+                String personGivenName = acct.getGivenName();
+                String personFamilyName = acct.getFamilyName();
+                String personEmail = acct.getEmail();
+                String personId = acct.getId();
+                Uri personPhoto = acct.getPhotoUrl();
+            }*/
+
             if (result.isSuccess())
             {
                 GoogleSignInAccount account = result.getSignInAccount();
@@ -212,6 +224,10 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         }
+    }
+
+    private Context getActivity() {
+        return null;
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {

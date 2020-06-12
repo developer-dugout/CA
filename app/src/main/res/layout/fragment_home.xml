@@ -106,9 +106,11 @@
                     android:id="@+id/post_image_one"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job_nts"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -205,6 +207,7 @@
                     android:id="@+id/post_image_two"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job_ots"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -303,6 +306,7 @@
                 <ImageView
                     android:id="@+id/post_image_three"
                     android:layout_width="match_parent"
+                    android:src="@drawable/job_pts"
                     android:layout_height="250dp"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
@@ -402,6 +406,7 @@
                 <ImageView
                     android:id="@+id/post_image_four"
                     android:layout_width="match_parent"
+                    android:src="@drawable/job_ppsc"
                     android:layout_height="250dp"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
@@ -501,6 +506,7 @@
                 <ImageView
                     android:id="@+id/post_image_five"
                     android:layout_width="match_parent"
+                    android:src="@drawable/job_fpsc"
                     android:layout_height="250dp"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
@@ -601,6 +607,7 @@
                     android:id="@+id/post_image_six"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job1"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -700,6 +707,7 @@
                     android:id="@+id/post_image_seven"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job2"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -799,6 +807,7 @@
                     android:id="@+id/post_image_eight"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job3"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -898,6 +907,7 @@
                     android:id="@+id/post_image_nine"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job4"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -997,6 +1007,7 @@
                     android:id="@+id/post_image_ten"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job5"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -1096,6 +1107,7 @@
                     android:id="@+id/post_image_eleven"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job6"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -1195,6 +1207,7 @@
                     android:id="@+id/post_image_twelve"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job7"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
@@ -1294,6 +1307,7 @@
                     android:id="@+id/post_image_thirteen"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+                    android:src="@drawable/job8"
                     android:layout_margin="3dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop" />
