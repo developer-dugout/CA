@@ -51,7 +51,6 @@ public class FriendsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
 
-
         toolbar = findViewById(R.id.friends_appbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Friends");

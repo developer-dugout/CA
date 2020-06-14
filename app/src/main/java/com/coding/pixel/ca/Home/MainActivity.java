@@ -33,6 +33,8 @@ import com.coding.pixel.ca.Adapter.TabsPagerAdapter;
 import com.coding.pixel.ca.Dashboard.RatingActivity;
 import com.coding.pixel.ca.ForgotPswrd.ForgotPasswordActivity;
 import com.coding.pixel.ca.Friends.FriendsActivity;
+import com.coding.pixel.ca.GovtAndPvtSector.GovtSectorActivity;
+import com.coding.pixel.ca.GovtAndPvtSector.PrivateSectorActivity;
 import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
@@ -317,15 +319,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, MainActivity.class));
                 break;
             case R.id.user_import:
-                showYourInterest();
+                Intent findIntent = new Intent(MainActivity.this, BlogPostActivity.class);
+                startActivity(findIntent);
                 break;
             case R.id.user_govt_sector:
-                //Intent profileIntent = new Intent(MainActivity.this, UserProfileActivity.class);
-                //startActivity(profileIntent);
+                Intent govtJobsIntent = new Intent(MainActivity.this, GovtSectorActivity.class);
+                startActivity(govtJobsIntent);
                 break;
             case R.id.user_pvt_sector:
-                //Intent messageIntent = new Intent(MainActivity.this, ChatActivity.class);
-                //startActivity(messageIntent);
+                Intent pvtJobsIntent = new Intent(MainActivity.this, PrivateSectorActivity.class);
+                startActivity(pvtJobsIntent);
                 break;
             case R.id.settings:
                 Intent settingsIntent = new Intent(getApplicationContext(), SettingActivity.class);
@@ -382,7 +385,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void showYourInterest() {
+    /*private void showYourInterest() {
         CharSequence[] options = new CharSequence[]
                 {
                         "POST BLOG",
@@ -398,20 +401,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Intent findIntent = new Intent(MainActivity.this, BlogPostActivity.class);
                     startActivity(findIntent);
                 }
-               /* if (i == 1)
+                if (i == 1)
                 {
-                    //Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
-                    //startActivity(returnIntent);
+                    Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
+                    startActivity(returnIntent);
                 }
                 if (i == 2)
                 {
-                    //Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
-                    //startActivity(returnIntent);
-                }*/
+                    Intent returnIntent = new Intent(MainActivity.this, AdminWatchPostActivity.class);
+                    startActivity(returnIntent);
+                }
             }
         });
         builder.show();
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -38,7 +38,7 @@ public class PostShownActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private RecyclerView postList;
     private FirebaseDatabase user_db;
-    private DatabaseReference post_ref;
+    private DatabaseReference post_ref, admin_watch_post_ref, userdb_ref;
     private DatabaseReference likesRef;
     private String checker="", myUrl, userid;
     String currentUserId;
@@ -58,9 +58,9 @@ public class PostShownActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user_db = FirebaseDatabase.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
-        DatabaseReference userdb_ref = user_db.getReference("users");
+        userdb_ref = user_db.getReference("users");
         post_ref = user_db.getReference().child("posts");
-        DatabaseReference admin_watch_post_ref = user_db.getReference().child("Blog Post Images");
+        admin_watch_post_ref = user_db.getReference().child("Blog Post Images");
         likesRef = user_db.getReference().child("Likes");
 
         postList = findViewById(R.id.all_user_posts);
@@ -89,7 +89,7 @@ public class PostShownActivity extends AppCompatActivity {
                 holder.time.setText(" at " +model.getTime());
                 holder.date.setText(" "+model.getDate());
                 holder.description.setText(model.getDescription());
-                Picasso.get().load(model.getImage()).into(holder.user_post_image);
+                Picasso.get().load(model.getImage()).into(holder.user_profile_image);
                 Picasso.get().load(model.getPostimage()).into(holder.postImage);
 
                 holder.setLikeButtonStatus(PostKey);
@@ -147,7 +147,7 @@ public class PostShownActivity extends AppCompatActivity {
     }
     public static class PostsViewHolder extends RecyclerView.ViewHolder{
         TextView username,date,time,description, noOfLikes;
-        CircleImageView user_post_image;
+        CircleImageView user_profile_image;
         ImageView postImage;
         ImageButton likePost, commentPost;
         int countsLikes;
@@ -161,7 +161,7 @@ public class PostShownActivity extends AppCompatActivity {
             time=itemView.findViewById(R.id.post_time);
             description=itemView.findViewById(R.id.post_description);
             postImage=itemView.findViewById(R.id.post_image);
-            user_post_image=itemView.findViewById(R.id.user_profile_image);
+            user_profile_image=itemView.findViewById(R.id.user_profile_image);
             likePost = itemView.findViewById(R.id.like_btn);
             commentPost = itemView.findViewById(R.id.comment_btn);
             noOfLikes = itemView.findViewById(R.id.display_no_of_likes);

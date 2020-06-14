@@ -21,12 +21,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GovtAndPvtSector.PrivateSectorActivity"></activity>
-        <activity android:name=".GovtAndPvtSector.GovtSectorActivity" />
-        <activity android:name=".Notification.NotificationActivity" />
+        <activity android:name=".GovtAndPvtSector.PrivateSectorActivity"
+            android:parentActivityName=".Home.MainActivity"
+            />
+        <activity android:name=".GovtAndPvtSector.GovtSectorActivity"
+            android:parentActivityName=".Home.MainActivity"
+            />
+        <activity android:name=".Notification.NotificationActivity"
+            android:parentActivityName=".Home.MainActivity"
+            />
         <activity
             android:name=".PostsActivities.PostShownActivity"
-            android:parentActivityName=".Home.MainActivity" />
+            android:parentActivityName=".Home.MainActivity"
+            />
         <activity android:name=".WebLinks.AppInfoActivity" />
         <activity android:name=".WebLinks.WebTermsConditionsActivity" />
         <activity android:name=".WebLinks.WebContactUsActivity" />
@@ -34,9 +41,14 @@
         <activity
             android:name=".Helping.HelpingActivity"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Home.MainActivity" />
-        <activity android:name=".Comments.BlogCommentsActivity" />
-        <activity android:name=".PostsActivities.BlogPostActivity" />
+            android:parentActivityName=".Home.MainActivity"
+            />
+        <activity android:name=".Comments.BlogCommentsActivity"
+            android:parentActivityName=".PostsActivities.PostShownActivity"
+            />
+        <activity android:name=".PostsActivities.BlogPostActivity"
+            android:parentActivityName=".Home.MainActivity"
+            />
         <activity
             android:name=".Dashboard.SettingActivity"
             android:configChanges="orientation|screenSize"

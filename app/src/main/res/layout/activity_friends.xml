@@ -22,6 +22,8 @@
         android:id="@+id/friendList"
         android:layout_marginTop="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp">
+        android:layout_marginRight="3dp"
+        android:background="@drawable/social_network"
+        >
     </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

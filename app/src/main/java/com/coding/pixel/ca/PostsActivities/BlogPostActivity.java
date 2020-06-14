@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.coding.pixel.ca.Comments.BlogCommentsActivity;
+import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.Home.MainActivity;
 import com.coding.pixel.ca.R;
 import com.google.android.gms.tasks.Continuation;
@@ -113,7 +115,7 @@ public class BlogPostActivity extends AppCompatActivity {
         }
         else
         {
-            loadingBar.setTitle("Updating Blog Post");
+            loadingBar.setTitle("Updating Public Post");
             loadingBar.setMessage("Please wait, while we are updating your new blog post...");
             loadingBar.show();
             loadingBar.setCanceledOnTouchOutside(true);
@@ -199,7 +201,7 @@ public class BlogPostActivity extends AppCompatActivity {
                     postsMap.put("date", saveCurrentDate);
                     postsMap.put("time", saveCurrentTime);
                     postsMap.put("description", Description);
-                    postsMap.put("post_image", downloadUrl);
+                    postsMap.put("postimage", downloadUrl);
                     postsMap.put("image", userProfileImage);
                     postsMap.put("name", userFullName);
                     postsMap.put("counter", countPost);
@@ -213,6 +215,7 @@ public class BlogPostActivity extends AppCompatActivity {
                                         SendUserToPublicPostActivity();
                                         Toast.makeText(BlogPostActivity.this, "New Post is updated successfully.", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
+                                        finish();
                                     }
                                     else
                                     {
@@ -264,7 +267,8 @@ public class BlogPostActivity extends AppCompatActivity {
     }
     private void SendUserToPublicPostActivity()
     {
-        startActivity(new Intent(BlogPostActivity.this, PostShownActivity.class));
+        Intent helpIntent = new Intent(BlogPostActivity.this, PostShownActivity.class);
+        startActivity(helpIntent);
         finish();
     }
 }
