@@ -5,8 +5,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.BroadcastReceiver;
@@ -25,10 +28,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.coding.pixel.ca.AboutUs.AboutAppActivity;
+import com.coding.pixel.ca.Adapter.CardItemAdapter;
+import com.coding.pixel.ca.Adapter.ImageSliderAdapter;
 import com.coding.pixel.ca.Adapter.TabsPagerAdapter;
 import com.coding.pixel.ca.Dashboard.RatingActivity;
 import com.coding.pixel.ca.ForgotPswrd.ForgotPasswordActivity;
@@ -38,6 +46,7 @@ import com.coding.pixel.ca.GovtAndPvtSector.PrivateSectorActivity;
 import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
+import com.coding.pixel.ca.Model.CardItemData;
 import com.coding.pixel.ca.Notification.NotificationActivity;
 import com.coding.pixel.ca.PostsActivities.BlogPostActivity;
 import com.coding.pixel.ca.PostsActivities.PostShownActivity;
@@ -57,7 +66,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.smarteist.autoimageslider.SliderView;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -75,6 +88,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
     private TabsPagerAdapter mTabsPagerAdapter;
+    private RecyclerView recyclerView_story, recyclerView_card, recyclerView_grid;
+    private ViewFlipper viewFlipper;
     
     //Firebase
     private FirebaseAuth mAuth;
@@ -84,6 +99,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String currentUserId;
 
     private ConnectivityReceiver connectivityReceiver;
+
+    private CardView card1;
+    private SliderView sliderView;
+    List<CardItemData>imageSliderModelList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,12 +131,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         /**
          * Tabs >> Viewpager for MainActivity
          */
-        mViewPager = findViewById(R.id.tabs_pager);
+        imageSliderModelList = new ArrayList<>();
+        sliderView = findViewById(R.id.imageSlider);
+
+        imageSliderModelList.add(new CardItemData(R.drawable.job_nts0, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job_ots1, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job_ppsc2, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job_pts3, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job4, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job5, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job6, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job7, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job8, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job9, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job10, "Job Opportunities"));
+        imageSliderModelList.add(new CardItemData(R.drawable.job11, "Job Opportunities"));
+
+        sliderView.setSliderAdapter(new ImageSliderAdapter(this, imageSliderModelList));
+
+        card1 = findViewById(R.id.card_1);
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent jobIntent = new Intent(MainActivity.this, GovtSectorActivity.class);
+                startActivity(jobIntent);
+            }
+        });
+
+        /*recyclerView_card = findViewById(R.id.card_itemView);
+        ArrayList <CardItemData> list = new ArrayList<>();
+
+        list.add(new CardItemData(R.drawable.job_nts0, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job_ots1, "Open Testing Service"));
+        list.add(new CardItemData(R.drawable.job_ppsc2, "Punjab Public Service Commission"));
+        list.add(new CardItemData(R.drawable.job_pts3, "Pakistan Testing Service"));
+        list.add(new CardItemData(R.drawable.job4, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job5, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job6, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job7, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job8, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job9, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job10, "National Testing Service"));
+        list.add(new CardItemData(R.drawable.job11, "National Testing Service"));
+
+        CardItemAdapter adapter = new CardItemAdapter(list, this);
+        recyclerView_card.setAdapter(adapter);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView_card.setLayoutManager(layoutManager);
+*/
+        /*mViewPager = findViewById(R.id.tabs_pager);
         mTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mTabsPagerAdapter);
 
         mTabLayout = findViewById(R.id.main_tabs);
-        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setupWithViewPager(mViewPager);*/
         //setupTabIcons();
 
         /**

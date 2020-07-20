@@ -144,7 +144,7 @@ public class BlogCommentsActivity extends AppCompatActivity {
         Query query = PostRef.orderByChild("time").equalTo(comments_Input.getText().toString());
         if (TextUtils.isEmpty(commentText))
         {
-            Toast.makeText(this, "Please Write Something first...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         }
         else
         {

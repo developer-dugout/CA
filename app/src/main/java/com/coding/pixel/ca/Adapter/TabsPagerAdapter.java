@@ -5,10 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.coding.pixel.ca.Fragments.CareersFragment;
-import com.coding.pixel.ca.Fragments.HomeFragment;
-import com.coding.pixel.ca.Fragments.JobsFragment;
-
 
 public class TabsPagerAdapter extends FragmentPagerAdapter {
 
@@ -21,14 +17,14 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                HomeFragment homeFragment = new HomeFragment();
-                return homeFragment;
+                //HomeFragment homeFragment = new HomeFragment();
+                //return homeFragment;
             case 1:
-                CareersFragment careersFragment = new CareersFragment();
-                return careersFragment;
+                //CareersFragment careersFragment = new CareersFragment();
+                //return careersFragment;
             case 2:
-                JobsFragment jobsFragment = new JobsFragment();
-                return jobsFragment;
+                //JobsFragment jobsFragment = new JobsFragment();
+                //return jobsFragment;
             default:
                 return null;
 

@@ -56,6 +56,8 @@ dependencies {
     implementation 'cn.zhaiyifan:rememberedittext:0.9.0'
     // image Compressor library
     implementation 'id.zelory:compressor:2.1.0'
+    // image slider with dot
+    implementation 'com.github.smarteist:autoimageslider:1.3.2'
 
     //Social login libs
     implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
