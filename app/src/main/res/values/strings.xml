@@ -13,7 +13,7 @@
     <string name="log_out">Log Out</string>
     <string name="profile">Import</string>
     <string name="friends">Friends</string>
-    <string name="about_app">About App</string>
+    <string name="about_app">Community Info</string>
     <string name="all_peoples">Peoples</string>
     <string name="all_friends">Friends</string>
 
@@ -37,7 +37,7 @@
     <string name="instructor1_name">Aamir Latif</string>
     <string name="instructor_name">Android Developer</string>
     <string name="about_text">This application is built for learning purpose.\nProject Source Code Link-</string>
-    <string name="project_git_link"><u>https://github.com/developer-dugout</u></string>
+    <string name="project_git_link"><u>https://techroofsoftring.000webhostapp.com</u></string>
     <string name="about_app_detail">x</string>
     <string name="student_id_details">Computer Science &amp; Software Engineering\nID: 2015-GCUF-2019</string>
 
@@ -81,8 +81,8 @@
     <string name="username">Username</string>
     <string name="write_your_status_here">User Status</string>
     <string name="home">Home</string>
-    <string name="admin_access">Govt Sector</string>
-    <string name="messages">Private Sector</string>
+    <string name="admin_access">Commercial Sector</string>
+    <string name="messages">Industrial Sector</string>
     <string name="rate_us">Rate Us</string>
     <string name="logout">Settings</string>
     <string name="conditions">CONDITIONS</string>
@@ -143,4 +143,287 @@
     <string name="comment_on">comment on</string>
     <string name="comments_text_show_here">comment text show here</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_f_a_q">FAQS</string>
+    <string name="large_text">
+        "Career Adviser FAQs…\n\n"
+        "Every year we come across a number of questions that are frequently asked by students applying to"
+        "jobs in Pakistan and all over the world."
+        "We have listed them here to help you complete for your Career Advising Strategies."
+        "If you have any suggestions for further questions we might add, please do not hesitate to contact us "
+        "at: info@careeradviser.com.\n\n"
+        "1. What is the Career Adviser Application?\n\n"
+        "Its one of the best ways to search and apply for different job opportunities for their careers."
+        "It saves you time as over 600 plus job opportunities in Pakistan (and 33 overseas as well) accept the Career Adviser Application."
+        "This means you only need to complete one application and you can apply to as many job opportunities as you want "
+        "(as long as you meet their entry requirements). Although in practice, its best applying to no more "
+        "than 4 to 6.\n\n"
+        "2. How do I apply?\n\n"
+        "You apply online at careeradviser.org"
+        "As well as the application itself you will find detailed step by step guides and videos on how to complete the "
+        "application."
+        "It also features essential information on member jobs and the courses they offer."
+        "Detailed information on filling out the Common App can be found in our guide.\n\n"
+        "3. Should I apply directly to a job or via the Career Adviser Application?\n\n"
+        "All of the 600 plus job opportunities who accept Career Adviser Applications have committed that you will receive equal preference "
+        "regardless of whether you apply directly or through the Career Adviser Application portal."
+        "Applying with the Career Adviser Application cuts down your time as its one application for multiple jobs.\n\n"
+        "4. What grades do I need to apply on jobs?\n\n"
+        "All jobs define requirements will have individual grades and qualifications for each of the opportunity you are choosing to"
+        "career."
+        "Its vital that you spend time researching the job section of the Career Adviser Application or website as this will "
+        "list all the grades you need for your specific career."
+        "If you are not sure which career or opportunity is right for you, why not refer to Career Advisers Choosing A Career "
+        "and Choosing A Major guides, as well as the online Career Adviser Application Requirements Grid."
+        "This will give you a quick overview of all the jobs, their careers, deadline dates to apply and if they "
+        "require extra supplements on top of the application details e.g. extra exams, portfolios of work etc."
+        "This is likely in about 1/3rd of all member careers.\n\n"
+        "5. Do I need anything else apart from my grades?\n\n"
+        "As well as your SAT/ACT grades, your courses and credits and other academic achievements, you will need to "
+        "complete all key sections of the application. Its essential you write a 250 word personal essay."
+        "This will be on one of 7 subjects specified in the application. Please read all of them and pick the one you "
+        "believe is your strongest and you could select about with honesty and real life examples."
+        "In addition you will be asked for information on your personal and family situation, and any extra-curricular "
+        "activities for job environment."
+        "This could be a job club or representation you take part in, or volunteer work at their best, or a paid part-time "
+        "or summer job you have. Do not be shy. This is your chance to shine and write a personal statement to "
+        "show what a fantastic person you are."
+        "Your job recruitment man will also write a reference about you as a colleague.\n\n"
+        "6. When should I apply?\n\n"
+        "This depends on which jobs and opportunities you are avail for and whether you are a first attempt or transfer "
+        "other dept (as you can apply via the Career Adviser Application for both)."
+        "The dates change if you are applying for an early decision, early action or regular job deadline. "
+        "The vast majority of consumers apply on the regular positions plan."
+        "Please check your specific Job opportunities deadline dates carefully.\n\n"
+        "7. Can companies see who else I have applied to?\n\n"
+        "Yes."
+        "Each company sees your Application in full except for the other opportunities you have applied for in your "
+        "My job list."
+        "However, they will be able to read your personal statements that you have written so please make sure its not "
+        "specific to one skill.\n\n"
+        "8. Whats the difference between the Career Adviser Application and the Universal market Application?\n\n"
+        "The Career Adviser Application has over 600 plus jon opportunities and the Universal Career Application (UCA) only has 43 "
+        "companies members."
+        "The Career Adviser Application gives you a structure and points to write your personal essay on whereas with "
+        "the UCA you choose the subject you write about and its free style. You can upload multimedia content "
+        "as well."
+        "Each have equal weighting with the member companies. If you are applying to 4 to 6 opportunities, ensure all of them "
+        "are on the same application system and apply using that one."
+        "If they are all on both consider the types of personal statement you have to write and aim for the one "
+        "you are best at.\n\n"
+        "9. Are there any companies that do not use the Career Adviser Application or the Universal Career Application systems?\n\n"
+        "Yes, some companies have decided not to use either of these systems. Notable to be include:\n"
+        "As a general rule, public opportunities tend to have their own systems, and some career on the CA and UCA "
+        "also offer their own online application systems."
+        "To check if a jobs is on the UCA or CA, simply go to the list of UCA and CA, and see if the "
+        "job is on the list (use a CTRL-F search to find out quickly)."
+        "If they do not use the Career App or UCA, they will outline specific instructions on how to apply which you "
+        "should follow carefully to ensure you have met all of their requirement."
+        "If you are mostly applying to jobs that do not use the UCA or CA, for the few opportunities you apply to that do "
+        "use those applications, you might have a bit more flexibility.\n\n"
+        "Further information:\n\n"
+        "For more tips and advice on putting together your Common Application for college, please see:"
+    </string>
+    <string name="large_text2">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="large_text3">
+        "Privacy Policy\n\n"
+        "Last updated: August 24, 2016\n"
+
+        "Jobee.pk ("us", "we", or "our") operates the www.jobee.pk website (the "Service")."
+        "This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service."
+        "We use your Personal Information for providing and improving the Service. We share your information to various customers / companies seeking employees or employers. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at www.jobee.pk\n\n"
+        "Information Collection And Use\n\n"
+        "While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to, your email address, name, phone number, postal address, other information ("Personal Information”), work history, experience, education, etc. We collect this information for the purpose of providing the Service, identifying and communicating with you, responding to your requests/inquiries, servicing your purchase orders, and share it with companies / users who have access to our employer services. We share this information with companies / users that re hiring so that we can serve the purpose of our site by connecting professionals with companies. Please keep in mind that any information contained within your profile is shared with employers / customers who have access to employer services on our website. We also use this information to improve Our services.\n\n"
+        "We also collect:\n\n"
+        "Username and password for the account you create with us\n"
+        "We keep record of your Job search behavior and preferences, and a record of the searches that you make on Jobee.PK. We do this in order to present you with job recommendations and other services."
+        "If you’ve authorized for us to access your social media profile, we collect information to share with companies / users using our employer services. If you’ve shared a facebook, google+, or twitter account, the users and companies with access to your profiles will be able to view it."
+        "How do we use your information?"
+        "We may use the information we collect from you when you register, make a purchase, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:\n"
+        "To connect you with companies / customers seeking employees. These companies will be able to view the information you have created within your profile with Jobee.pk.\n"
+        "To connect Employers or Users with access to our employer services with user profiles within our system.\n"
+        "To personalize users experience and to allow us to match you to jobs or services that fit your needs based on our recorded data on your preferences and searches.\n:
+        "To improve our website.\n"
+        "To allow us to better service you in responding to your customer service requests.\n"
+        "To administer a contest, promotion, survey or other site feature.\n"
+        "To quickly process your transactions.\n"
+        "To ask for ratings and reviews of services or products.\n"
+        "To follow up with them after correspondence (live chat, email or phone inquiries)\n"
+        "Sharing of Information\n"
+        "When you join Jobee.pk or apply for a job through us, we share your Personal Information with employer customers. These customers may use this information to evaluate you for jobs and contact you. These customers may also store your information and in such cases, the use of this information will be subjected to the privacy policy of that company. We also share employer customer’s information with job seeker customers. Our employer customers are able to post jobs on our website that we share with our job seeker customers. Jobee.PK will not be responsible for misuse for this information stored by the Job seeker customer or the employer customer.\n"
+        "When you apply for a job through Jobee.PK, this information becomes a part of our database and it might also become a part of the employer’s database. In the case that it becomes a part of the employers database, the use of the information will be subjected to the privacy policy of that employer / user.\n"
+        "When you post a job on Jobee.PK, this information becomes a part of our database and it might also become a part of some other user’s database. In the case that it become a part of a user’s database, Jobee.PK is not responsible on how this information is used by the users.\n"
+        "Users should keep in mind that when they display personal information through Jobee.PK, this information can be accessed, collected, and used by others. It could result in third parties attempting to contact this user. Jobee.PK is not responsible for unsolicited contact or message requests from third parties.\n"
+        "At times, we may aggregate data to provide our employer customers or our Job Seeker customers with reporting to help serve them better and better our services.\n\n"
+        "How do we protect visitor information?\n\n"
+        "Members are our top priority. We will guard your information as much as we can while being a professional platform for Job Seekers and Employers / Companies. Please note that once you create your Jobee Profile, your information will be available to anyone who has a link to your profile / resume and also any user / companies with access to our platform through our employer services. If you are an employer or company advertising on our website, the job information and company information you provide is public and will be shared with users and on any other platforms that we may see fit.\n\n"
+        "Please note that though we verify companies that are willing to send us their CNIC or other government issued ID, there are many companies who choose to use our employer services without going through our verification requirement. These are marked as “Unverified.” Jobee.pk cannot be held responsible for any false representation. Whether a company is verified or not, we encourage users to always use discretion and caution. Being an online platform, we cannot be held responsible for any mishaps. We take our users' privacy very seriously; if you see any questionable behavior, please contact us immediately and report it.\n\n"
+        "Log Data\n\n"
+        "We may also collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics. In addition, we may use third party services such as Google Analytics that collect, monitor and analyze this type of information in order to increase our Service's functionality. These third party service providers have their own privacy policies addressing how they use such information.\n\n"
+        "Cookies\n\n"
+        "Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and transferred to your device. We use cookies to collect information in order to improve our services for you. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. The Help feature on most browsers provide information on how to accept cookies, disable cookies or to notify you when receiving a new cookie. If you do not accept cookies, you may not be able to use some features of our Service and we recommend that you leave them turned on.\n\n"
+        "Service Providers\n\n"
+        "We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services and/or to assist us in analyzing how our Service is used. These third parties have access to your Personal Information only to perform specific tasks on our behalf and are obligated not to disclose or use your information for any other purpose.\n\n"
+        "Compliance With Laws\n\n"
+        "We will disclose your Personal Information where required to do so by law or subpoena or if we believe that such action is necessary to comply with the law and the reasonable requests of law enforcement or to protect the security or integrity of our Service.\n\n"
+        "Security\n\n"
+        "The security of your Personal Information is important to us, and we strive to implement and maintain reasonable, commercially acceptable security procedures and practices appropriate to the nature of the information we store, in order to protect it from unauthorized access, destruction, use, modification, or disclosure. However, please be aware that no method of transmission over the internet, or method of electronic storage is 100% secure and we are unable to guarantee the absolute security of the Personal Information we have collected from you.\n\n"
+        "International Transfer\n\n"
+        "Your information, including Personal Information, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction. If you are located outside United States and choose to provide information to us, please note that we transfer the information, including Personal Information, to United States and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.\n\n"
+        "Links To Other Sites\n\n"
+        "Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.\n\n"
+        "Children's Privacy\n\n"
+        "Only persons age 18 or older have permission to access our Service. Our Service does not address anyone under the age of 13 ("Children"). We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you learn that your Children have provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from a children under age 13 without verification of parental consent, we take steps to remove that information from our servers.\n\n"
+        "Changes To This Privacy Policy\n\n"
+        "This Privacy Policy is effective as of August 24, 2016 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page. We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy. If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website.\n\n"
+        "Contact Us\n\n"
+        "If you have any questions about these Terms, please contact us."
+    </string>
+    <string name="large_text4">
+        "What is Career Adviser community service?\n\n"
+
+        "Community service is work done by a person or group of people that benefits others. It is often done "
+        "near the area where you live, so your own community reaps the benefits of your work. You do not get paid "
+        "to perform community service, but volunteer your time."
+        "Community service can help many different groups of people: children, senior citizens, people with "
+        "disabilities, even animals and the environment. Community service is often organized through a local group, "
+        "such as a place of worship, school, or non-profit organization, but you can also start your own community "
+        "service projects."
+        "Many people participate in community service because they enjoy helping others and improving their "
+        "community. Some students are required to do community service in order to graduate high school or to "
+        "receive certain honors. Some adults are also ordered by a judge to complete a certain number of "
+        "community service hours.\n\n"
+        "Why Should You Participate in Community Service?\n\n"
+        "There are numerous benefits to participating in community service, both for yourself and others."
+        "Below are some of the most important benefits of volunteering:\n\n"
+        "*Gives you a way to help others\n"
+        "*Helps improve your community\n"
+        "*Can help strengthen your resume and applications\n"
+        "*Can be a way to meet new friends\n"
+        "*Often results in personal growth\n"
+        "*Gives you a way to gain work experience and learn more\n\n"
+        "How Should You Use This List?\n\n"
+        "This list of over one hundred community service examples is organized by category, so if you are "
+        "particularly interested in working with, say, children or animals, you can easily find community service "
+        "activities more related to your interests."
+        "In order to use this list most effectively, read through it and make note of any community service ideas "
+        "that match your interests and that you may want to participate in. Some considerations to keep in mind "
+        "are:\n\n"
+        "Who would you like to help?\n\n"
+        "Is there a specific group of people or cause you are passionate about? Look for projects that relate to "
+        "your passion and interests. You may also just want to perform particular community service activities "
+        "that allow you to do hobbies you enjoy, like baking or acting, and that fine too.\n\n"
+        "Do you want a community service activity that is reoccurring or a one-time event?\n\n"
+        "Perhaps you do not have enough time to regularly devote to community service. In that case, it may be "
+        "better to look for opportunities that only occur once or sporadically, such as planning special events "
+        "or helping build a house.\n\n"
+        "What kind of impact do you want to have?\n\n"
+        "Some people prefer to participate in community service activities that have a quantifiable impact, for "
+        "example, activities where you know the specific number of kids you tutored, dollars you raised, or cans "
+        "of food you collected. This is in contrast to activities that do not have such clear numbers, such as "
+        "creating a garden or serving as a volunteer lifeguard. Some people prefer quantifiable activities "
+        "because they feel they look stronger on college applications, or because they simply enjoy knowing their "
+        "exact impact on the community.\n\n"
+        "What skills would you like to gain?\n\n"
+        "Many community service activities can help you gain skills. These skills can range from teaching to "
+        "medicine to construction and more. If there is a particular skill you would like to learn for future "
+        "classes, jobs, or just out of personal interest, you may want to see if there is a community service "
+        "activity that helps you learn that skill."
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_contact_us">Contact Us</string>
+    <string name="title_activity_terms_conditions">Terms &amp; Conditions</string>
+    <string name="title_activity_app_info">Communities Information</string>
+    <string name="contact_form_name">Your Name</string>
+    <string name="contact_form_email">Your Email</string>
+    <string name="contact_form_subject">Subject</string>
+    <string name="contact_form_message">Message</string>
+    <string name="contact_form_button">Send Message</string>
 </resources>

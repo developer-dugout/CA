@@ -21,34 +21,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GovtAndPvtSector.PrivateSectorActivity"
-            android:parentActivityName=".Home.MainActivity"
-            />
-        <activity android:name=".GovtAndPvtSector.GovtSectorActivity"
-            android:parentActivityName=".Home.MainActivity"
-            />
-        <activity android:name=".Notification.NotificationActivity"
-            android:parentActivityName=".Home.MainActivity"
-            />
+        <activity
+            android:name=".WebLinks.AppInfoActivity"
+            android:label="@string/title_activity_app_info"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".WebLinks.TermsConditionsActivity"
+            android:label="@string/title_activity_terms_conditions"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WebLinks.ContactUsActivity"
+            android:label="@string/title_activity_contact_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WebLinks.FAQActivity"
+            android:label="@string/title_activity_f_a_q"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".GovtAndPvtSector.PrivateSectorActivity"
+            android:parentActivityName=".Home.MainActivity" />
+        <activity
+            android:name=".GovtAndPvtSector.GovtSectorActivity"
+            android:parentActivityName=".Home.MainActivity" />
+        <activity
+            android:name=".Notification.NotificationActivity"
+            android:parentActivityName=".Home.MainActivity" />
         <activity
             android:name=".PostsActivities.PostShownActivity"
-            android:parentActivityName=".Home.MainActivity"
-            />
-        <activity android:name=".WebLinks.AppInfoActivity" />
-        <activity android:name=".WebLinks.WebTermsConditionsActivity" />
-        <activity android:name=".WebLinks.WebContactUsActivity" />
-        <activity android:name=".WebLinks.WebFaqActivity" />
+            android:parentActivityName=".Home.MainActivity" />
         <activity
             android:name=".Helping.HelpingActivity"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Home.MainActivity"
-            />
-        <activity android:name=".Comments.BlogCommentsActivity"
-            android:parentActivityName=".PostsActivities.PostShownActivity"
-            />
-        <activity android:name=".PostsActivities.BlogPostActivity"
-            android:parentActivityName=".Home.MainActivity"
-            />
+            android:parentActivityName=".Home.MainActivity" />
+        <activity
+            android:name=".Comments.BlogCommentsActivity"
+            android:parentActivityName=".PostsActivities.PostShownActivity" />
+        <activity
+            android:name=".PostsActivities.BlogPostActivity"
+            android:parentActivityName=".Home.MainActivity" />
         <activity
             android:name=".Dashboard.SettingActivity"
             android:configChanges="orientation|screenSize"

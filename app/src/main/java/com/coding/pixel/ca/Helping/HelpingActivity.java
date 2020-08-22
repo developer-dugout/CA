@@ -8,11 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import com.coding.pixel.ca.AboutUs.AboutAppActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.WebLinks.AppInfoActivity;
-import com.coding.pixel.ca.WebLinks.WebContactUsActivity;
-import com.coding.pixel.ca.WebLinks.WebFaqActivity;
-import com.coding.pixel.ca.WebLinks.WebTermsConditionsActivity;
+import com.coding.pixel.ca.WebLinks.ContactUsActivity;
+import com.coding.pixel.ca.WebLinks.FAQActivity;
+import com.coding.pixel.ca.WebLinks.TermsConditionsActivity;
 
 public class HelpingActivity extends AppCompatActivity {
 
@@ -37,28 +38,28 @@ public class HelpingActivity extends AppCompatActivity {
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent faqIntent = new Intent(HelpingActivity.this, WebFaqActivity.class);
+                Intent faqIntent = new Intent(HelpingActivity.this, FAQActivity.class);
                 startActivity(faqIntent);
             }
         });
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent contactUsIntent = new Intent(HelpingActivity.this, WebContactUsActivity.class);
+                Intent contactUsIntent = new Intent(HelpingActivity.this, ContactUsActivity.class);
                 startActivity(contactUsIntent);
             }
         });
         three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent termsConditionsIntent = new Intent(HelpingActivity.this, WebTermsConditionsActivity.class);
+                Intent termsConditionsIntent = new Intent(HelpingActivity.this, TermsConditionsActivity.class);
                 startActivity(termsConditionsIntent);
             }
         });
         four.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent appInfoIntent = new Intent(HelpingActivity.this, AppInfoActivity.class);
+                Intent appInfoIntent = new Intent(HelpingActivity.this, AboutAppActivity.class);
                 startActivity(appInfoIntent);
             }
         });

@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -20,6 +21,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -35,9 +37,11 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.coding.pixel.ca.AboutUs.AboutAppActivity;
+import com.coding.pixel.ca.Adapter.Card2ItemAdapter;
 import com.coding.pixel.ca.Adapter.CardItemAdapter;
 import com.coding.pixel.ca.Adapter.ImageSliderAdapter;
 import com.coding.pixel.ca.Adapter.TabsPagerAdapter;
+import com.coding.pixel.ca.Classes.RecyclerItemClickListener;
 import com.coding.pixel.ca.Dashboard.RatingActivity;
 import com.coding.pixel.ca.ForgotPswrd.ForgotPasswordActivity;
 import com.coding.pixel.ca.Friends.FriendsActivity;
@@ -46,13 +50,16 @@ import com.coding.pixel.ca.GovtAndPvtSector.PrivateSectorActivity;
 import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
+import com.coding.pixel.ca.Model.Card2ItemData;
 import com.coding.pixel.ca.Model.CardItemData;
 import com.coding.pixel.ca.Notification.NotificationActivity;
 import com.coding.pixel.ca.PostsActivities.BlogPostActivity;
 import com.coding.pixel.ca.PostsActivities.PostShownActivity;
+import com.coding.pixel.ca.Profile.ProfileActivity;
 import com.coding.pixel.ca.ProfileSetting.SettingsActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.Search.SearchActivity;
+import com.coding.pixel.ca.WebLinks.AppInfoActivity;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -69,6 +76,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.smarteist.autoimageslider.SliderView;
 import com.squareup.picasso.Picasso;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -158,28 +166,125 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        /*recyclerView_card = findViewById(R.id.card_itemView);
-        ArrayList <CardItemData> list = new ArrayList<>();
+        recyclerView_grid = findViewById(R.id.card_2_recycler);
+        ArrayList <Card2ItemData> c2list = new ArrayList<>();
 
-        list.add(new CardItemData(R.drawable.job_nts0, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job_ots1, "Open Testing Service"));
-        list.add(new CardItemData(R.drawable.job_ppsc2, "Punjab Public Service Commission"));
-        list.add(new CardItemData(R.drawable.job_pts3, "Pakistan Testing Service"));
-        list.add(new CardItemData(R.drawable.job4, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job5, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job6, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job7, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job8, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job9, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job10, "National Testing Service"));
-        list.add(new CardItemData(R.drawable.job11, "National Testing Service"));
+        c2list.add(new Card2ItemData(R.drawable.isi_job, "Inter Service Intelligence"));
+        c2list.add(new Card2ItemData(R.drawable.pma_job, "Pakistan Military Army"));
+        c2list.add(new Card2ItemData(R.drawable.paf_job, "Pakistan Air Force"));
+        c2list.add(new Card2ItemData(R.drawable.navy_job, "Pakistan Navy Force"));
+        c2list.add(new Card2ItemData(R.drawable.nab_job, "National Accountability Bureau"));
+        c2list.add(new Card2ItemData(R.drawable.hec_job, "Higher Education Commission"));
+        c2list.add(new Card2ItemData(R.drawable.nts_job, "National Testing Service"));
+        c2list.add(new Card2ItemData(R.drawable.ots_job, "Open Testing Service"));
+        c2list.add(new Card2ItemData(R.drawable.pts_job, "Pakistan Testing Service"));
+        c2list.add(new Card2ItemData(R.drawable.ppsc_job, "Punjab Public Service Commission"));
+        c2list.add(new Card2ItemData(R.drawable.fpsc_job, "Federal Public Service Commission"));
+        c2list.add(new Card2ItemData(R.drawable.pjp_job, "Pakistan Job Portal"));
+        c2list.add(new Card2ItemData(R.drawable.jobee_job, "Jobee.pk Jobs"));
+        c2list.add(new Card2ItemData(R.drawable.rozee_job, "Rozee.pk Jobs"));
+        c2list.add(new Card2ItemData(R.drawable.dunya_job, "Dunya.pk Jobs"));
 
-        CardItemAdapter adapter = new CardItemAdapter(list, this);
-        recyclerView_card.setAdapter(adapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView_card.setLayoutManager(layoutManager);
-*/
+        Card2ItemAdapter adapter = new Card2ItemAdapter(c2list, this);
+        recyclerView_grid.setAdapter(adapter);
+
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+//        recyclerView_card.setLayoutManager(layoutManager);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        recyclerView_grid.setLayoutManager(layoutManager);
+
+        recyclerView_grid.addOnItemTouchListener(new RecyclerItemClickListener(
+                this, recyclerView_grid, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                switch (position){
+                    case 0:
+                        Uri uri = Uri.parse("https://content.pk/pakistan/isi-the-inter-services-intelligence-agency-of-pakistan/");
+                        Intent isiIntent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(isiIntent);
+                        break;
+                    case 1:
+                        Uri uri1 = Uri.parse("https://pakistanarmy.gov.pk/");
+                        Intent pakArmyIntent = new Intent(Intent.ACTION_VIEW, uri1);
+                        startActivity(pakArmyIntent);
+                        break;
+                    case 2:
+                        Uri uri2 = Uri.parse("http://www.paf.gov.pk/");
+                        Intent pafArmyIntent = new Intent(Intent.ACTION_VIEW, uri2);
+                        startActivity(pafArmyIntent);
+                        break;
+                    case 3:
+                        Uri uri3 = Uri.parse("https://www.paknavy.gov.pk/");
+                        Intent navyArmyIntent = new Intent(Intent.ACTION_VIEW, uri3);
+                        startActivity(navyArmyIntent);
+                        break;
+                    case 4:
+                        Uri uri4 = Uri.parse("https://nab.gov.pk/");
+                        Intent nabArmyIntent = new Intent(Intent.ACTION_VIEW, uri4);
+                        startActivity(nabArmyIntent);
+                        break;
+                    case 5:
+                        Uri uri5 = Uri.parse("https://www.hec.gov.pk/english/pages/home.aspx");
+                        Intent hecIntent = new Intent(Intent.ACTION_VIEW, uri5);
+                        startActivity(hecIntent);
+                        break;
+                    case 6:
+                        Uri uri6 = Uri.parse("https://www.nts.org.pk/");
+                        Intent ntsIntent = new Intent(Intent.ACTION_VIEW, uri6);
+                        startActivity(ntsIntent);
+                        break;
+                    case 7:
+                        Uri uri7 = Uri.parse("https://www.ots.org.pk/");
+                        Intent otsIntent = new Intent(Intent.ACTION_VIEW, uri7);
+                        startActivity(otsIntent);
+                        break;
+                    case 8:
+                        Uri uri8 = Uri.parse("http://pts.org.pk/");
+                        Intent ptsIntent = new Intent(Intent.ACTION_VIEW, uri8);
+                        startActivity(ptsIntent);
+                        break;
+                    case 9:
+                        Uri uri9 = Uri.parse("http://www.ppsc.gop.pk/(S(bw45220hgj2ccnghyfqmjcsm))/default.aspx");
+                        Intent ppscIntent = new Intent(Intent.ACTION_VIEW, uri9);
+                        startActivity(ppscIntent);
+                        break;
+                    case 10:
+                        Uri uri10 = Uri.parse("http://www.online.fpsc.gov.pk/index_gr.php");
+                        Intent fpscIntent = new Intent(Intent.ACTION_VIEW, uri10);
+                        startActivity(fpscIntent);
+                        break;
+                    case 11:
+                        Uri uri11 = Uri.parse("https://pakistanjobsportal.com/");
+                        Intent pjpIntent = new Intent(Intent.ACTION_VIEW, uri11);
+                        startActivity(pjpIntent);
+                        break;
+                    case 12:
+                        Uri uri12 = Uri.parse("https://jobee.pk/");
+                        Intent jobeeIntent = new Intent(Intent.ACTION_VIEW, uri12);
+                        startActivity(jobeeIntent);
+                        break;
+                    case 13:
+                        Uri uri13 = Uri.parse("https://www.rozee.pk/");
+                        Intent rozeeIntent = new Intent(Intent.ACTION_VIEW, uri13);
+                        startActivity(rozeeIntent);
+                        break;
+                    case 14:
+                        Uri uri14 = Uri.parse("https://jobsdunya.com/");
+                        Intent dunyaJobIntent = new Intent(Intent.ACTION_VIEW, uri14);
+                        startActivity(dunyaJobIntent);
+                        break;
+                    default:
+                }
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }
+        ));
+
         /*mViewPager = findViewById(R.id.tabs_pager);
         mTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mTabsPagerAdapter);
@@ -194,7 +299,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mToolbar = findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
         //getSupportActionBar().setTitle("uMe");
-
 
         navigationView = findViewById(R.id.nav_view);
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -343,7 +447,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (item.getItemId() == R.id.about_app){
-            Intent intent =  new Intent(MainActivity.this, AboutAppActivity.class);
+            Intent intent =  new Intent(MainActivity.this, AppInfoActivity.class);
             startActivity(intent);
         }
 

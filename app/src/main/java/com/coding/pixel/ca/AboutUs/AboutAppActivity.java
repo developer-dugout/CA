@@ -36,7 +36,7 @@ public class AboutAppActivity extends AppCompatActivity {
         gitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://github.com/TheHasnatBD");
+                Uri uri = Uri.parse("https://github.com/techroof360");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -46,7 +46,7 @@ public class AboutAppActivity extends AppCompatActivity {
         InstaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://instagram.com/TheHasnatBD");
+                Uri uri = Uri.parse("https://www.instagram.com/street.developers/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -56,7 +56,7 @@ public class AboutAppActivity extends AppCompatActivity {
         LinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://linkedin.com/in/TheHasnatBD");
+                Uri uri = Uri.parse("https://www.linkedin.com/in/aamir-latif-a21779177/");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -66,7 +66,7 @@ public class AboutAppActivity extends AppCompatActivity {
         TwBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://twitter.com/TheHasnatBD");
+                Uri uri = Uri.parse("https://twitter.com/shotbuthot");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }

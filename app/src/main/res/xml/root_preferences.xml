@@ -34,12 +34,13 @@
             app:title="@string/attachment_title"
             />
     </PreferenceCategory>
-    <PreferenceCategory app:title="Theme Changer"
-        android:icon="@drawable/ic_theme_changer"
+    <PreferenceCategory app:title="Business Integrations"
+        android:icon="@drawable/ic_business"
         >
         <CheckBoxPreference
             app:key="sync"
-            app:title="Enable Dark Mode"
+            app:title="Business Information"
+            app:summary="View and remove the business integrations you've connected with your account to manage your adds."
             />
     </PreferenceCategory>
 
