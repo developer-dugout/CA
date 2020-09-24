@@ -74,6 +74,7 @@ public class PostShownActivity extends AppCompatActivity {
         DisplayAllUsersPosts();
     }
 
+
     private void DisplayAllUsersPosts() {
 
         Query postInOrder = post_ref.orderByChild("counter");

@@ -21,10 +21,10 @@
         android:title="@string/all_friends"
         android:id="@+id/all_friends"
         app:showAsAction="never"/>
-    <item
+    <!--<item
         android:title="@string/public_posts"
         android:id="@+id/all_public_posts"
-        app:showAsAction="never"/>
+        app:showAsAction="never"/>-->
     <item
         android:title="@string/about_app"
         android:id="@+id/about_app"

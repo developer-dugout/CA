@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainRelative"
-    android:background="@android:color/darker_gray"
+    android:background="#1234"
     tools:context=".Dashboard.RatingActivity"
     >
     <include

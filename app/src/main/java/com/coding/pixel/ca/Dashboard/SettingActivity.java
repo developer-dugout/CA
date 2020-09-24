@@ -44,6 +44,8 @@ public class SettingActivity extends AppCompatActivity {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
 
 
+
+
         }
     }
 }

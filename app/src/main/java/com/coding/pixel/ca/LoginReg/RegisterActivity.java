@@ -118,7 +118,8 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (!password.equals(confirmPassword)){
             SweetToast.error(myContext, "Your password don't match with your confirm password");
 
-        } else {
+        } else
+            {
             //NOw ready to create a user a/c
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

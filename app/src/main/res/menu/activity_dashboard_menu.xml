@@ -29,6 +29,11 @@
                     android:title="@string/messages"
                     />
                 <item
+                    android:id="@+id/user_public_posts"
+                    android:icon="@drawable/ic_timeline"
+                    android:title="@string/public_posts"
+                    />
+                <item
                     android:id="@+id/settings"
                     android:icon="@drawable/ic_setings"
                     android:title="@string/logout"

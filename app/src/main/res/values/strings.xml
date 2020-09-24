@@ -102,7 +102,7 @@
     <string name="login">LOGIN</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-    <string name="new_here_create_an_account">New here? Create an account</string>
+    <string name="new_here_create_an_account">Don\'t have an account? Sign Up</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="update_blog_on">update blog on</string>
     <string name="date">Date</string>
@@ -143,9 +143,9 @@
     <string name="comment_on">comment on</string>
     <string name="comments_text_show_here">comment text show here</string>
     <string name="todo">TODO</string>
-    <string name="title_activity_f_a_q">FAQS</string>
+    <string name="title_activity_f_a_q">FAQ\'s</string>
     <string name="large_text">
-        "Career Adviser FAQs…\n\n"
+        "Career Adviser FAQ\'s…\n\n"
         "Every year we come across a number of questions that are frequently asked by students applying to"
         "jobs in Pakistan and all over the world."
         "We have listed them here to help you complete for your Career Advising Strategies."

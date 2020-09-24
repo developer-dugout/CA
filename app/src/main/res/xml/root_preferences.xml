@@ -56,13 +56,15 @@
             app:useSimpleSummaryProvider="true"
             />
     </PreferenceCategory>
-    <PreferenceCategory app:title="Notifications"
+    <PreferenceCategory
+        app:title="Notifications"
         android:icon="@drawable/ic_notifications"
         >
-        <PreferenceScreen
-            app:key="notify_settings"
-            android:title="Message, Blog, Careers, Jobs">
-        </PreferenceScreen>
+        <CheckBoxPreference
+            app:key="sync"
+            app:title="Turn on all notification"
+            app:summary="Checked it for turn on all other notifications about Job posts, Current Careers, and Future Projects."
+            />
     </PreferenceCategory>
     <PreferenceCategory app:title="Location"
         android:icon="@drawable/ic_location"
@@ -82,6 +84,10 @@
         <PreferenceScreen
             app:key="notify_accesses"
             android:title="Websites, Blog's, Pages, Apps">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.careerbuilder.com/"
+                />
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory app:title="Version &amp; Ratings"

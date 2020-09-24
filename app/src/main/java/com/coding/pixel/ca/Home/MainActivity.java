@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +25,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -50,6 +53,7 @@ import com.coding.pixel.ca.GovtAndPvtSector.PrivateSectorActivity;
 import com.coding.pixel.ca.Helping.HelpingActivity;
 import com.coding.pixel.ca.LoginReg.LoginActivity;
 import com.coding.pixel.ca.Dashboard.SettingActivity;
+import com.coding.pixel.ca.LoginReg.RegisterActivity;
 import com.coding.pixel.ca.Model.Card2ItemData;
 import com.coding.pixel.ca.Model.CardItemData;
 import com.coding.pixel.ca.Notification.NotificationActivity;
@@ -60,11 +64,16 @@ import com.coding.pixel.ca.ProfileSetting.SettingsActivity;
 import com.coding.pixel.ca.R;
 import com.coding.pixel.ca.Search.SearchActivity;
 import com.coding.pixel.ca.WebLinks.AppInfoActivity;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -73,14 +82,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.smarteist.autoimageslider.SliderView;
 import com.squareup.picasso.Picasso;
 
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import xyz.hasnat.sweettoast.SweetToast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -89,6 +102,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView getUserName;
     private TextView getUserStatus;
     private FloatingActionButton userMsgBtn;
+    private Context myContext = MainActivity.this;
+    private ProgressDialog progressDialog;
 
     private static final int TIME_LIMIT = 1500;
     private static long backPressed;
@@ -111,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CardView card1;
     private SliderView sliderView;
     List<CardItemData>imageSliderModelList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,10 +196,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         c2list.add(new Card2ItemData(R.drawable.pts_job, "Pakistan Testing Service"));
         c2list.add(new Card2ItemData(R.drawable.ppsc_job, "Punjab Public Service Commission"));
         c2list.add(new Card2ItemData(R.drawable.fpsc_job, "Federal Public Service Commission"));
+        c2list.add(new Card2ItemData(R.drawable.tevta, "TEVTA Jobs"));
+        c2list.add(new Card2ItemData(R.drawable.pemra, "PEMRA Jobs"));
         c2list.add(new Card2ItemData(R.drawable.pjp_job, "Pakistan Job Portal"));
         c2list.add(new Card2ItemData(R.drawable.jobee_job, "Jobee.pk Jobs"));
         c2list.add(new Card2ItemData(R.drawable.rozee_job, "Rozee.pk Jobs"));
         c2list.add(new Card2ItemData(R.drawable.dunya_job, "Dunya.pk Jobs"));
+        c2list.add(new Card2ItemData(R.drawable.hub, "Jobs Hub"));
+
 
 
         Card2ItemAdapter adapter = new Card2ItemAdapter(c2list, this);
@@ -255,24 +275,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         startActivity(fpscIntent);
                         break;
                     case 11:
-                        Uri uri11 = Uri.parse("https://pakistanjobsportal.com/");
-                        Intent pjpIntent = new Intent(Intent.ACTION_VIEW, uri11);
-                        startActivity(pjpIntent);
+                        Uri uri11 = Uri.parse("http://www.tevta.gop.pk/index.php");
+                        Intent tevtaIntent = new Intent(Intent.ACTION_VIEW, uri11);
+                        startActivity(tevtaIntent);
                         break;
                     case 12:
-                        Uri uri12 = Uri.parse("https://jobee.pk/");
-                        Intent jobeeIntent = new Intent(Intent.ACTION_VIEW, uri12);
-                        startActivity(jobeeIntent);
+                        Uri uri12 = Uri.parse("http://www.pemra.gov.pk/");
+                        Intent pemraIntent = new Intent(Intent.ACTION_VIEW, uri12);
+                        startActivity(pemraIntent);
                         break;
                     case 13:
-                        Uri uri13 = Uri.parse("https://www.rozee.pk/");
-                        Intent rozeeIntent = new Intent(Intent.ACTION_VIEW, uri13);
-                        startActivity(rozeeIntent);
+                        Uri uri13 = Uri.parse("https://pakistanjobsportal.com/");
+                        Intent pjpIntent = new Intent(Intent.ACTION_VIEW, uri13);
+                        startActivity(pjpIntent);
                         break;
                     case 14:
-                        Uri uri14 = Uri.parse("https://jobsdunya.com/");
-                        Intent dunyaJobIntent = new Intent(Intent.ACTION_VIEW, uri14);
+                        Uri uri14 = Uri.parse("https://jobee.pk/");
+                        Intent jobeeIntent = new Intent(Intent.ACTION_VIEW, uri14);
+                        startActivity(jobeeIntent);
+                        break;
+                    case 15:
+                        Uri uri15 = Uri.parse("https://www.rozee.pk/");
+                        Intent rozeeIntent = new Intent(Intent.ACTION_VIEW, uri15);
+                        startActivity(rozeeIntent);
+                        break;
+                    case 16:
+                        Uri uri16 = Uri.parse("https://jobsdunya.com/");
+                        Intent dunyaJobIntent = new Intent(Intent.ACTION_VIEW, uri16);
                         startActivity(dunyaJobIntent);
+                        break;
+                    case 17:
+                        Uri uri17 = Uri.parse("https://jobshut.pk/");
+                        Intent hubJobIntent = new Intent(Intent.ACTION_VIEW, uri17);
+                        startActivity(hubJobIntent);
                         break;
                     default:
                 }
@@ -347,6 +382,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             {
             }
         });
+
+        final GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if (googleSignInAccount != null)
+        {
+            getUserName.setText(googleSignInAccount.getDisplayName());
+            getUserStatus.setText(googleSignInAccount.getEmail());
+            Picasso.get().load(currentUser.getPhotoUrl()).into(NavProfileView);
+        }
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -441,10 +484,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         }
 
-        if (item.getItemId() == R.id.all_public_posts){
+        /*if (item.getItemId() == R.id.all_public_posts){
             Intent intent =  new Intent(MainActivity.this, PostShownActivity.class);
             startActivity(intent);
-        }
+        }*/
 
         if (item.getItemId() == R.id.about_app){
             Intent intent =  new Intent(MainActivity.this, AppInfoActivity.class);
@@ -501,6 +544,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.user_pvt_sector:
                 Intent pvtJobsIntent = new Intent(MainActivity.this, PrivateSectorActivity.class);
                 startActivity(pvtJobsIntent);
+                break;
+            case R.id.user_public_posts:
+                Intent publicPostsIntent = new Intent(MainActivity.this, PostShownActivity.class);
+                startActivity(publicPostsIntent);
                 break;
             case R.id.settings:
                 Intent settingsIntent = new Intent(getApplicationContext(), SettingActivity.class);

@@ -33,6 +33,7 @@ import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -65,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private ImageView google, twitter, facebook;
     private TextView linkSingUp, linkForgotPassword, copyrightTV;
-
     private ProgressDialog progressDialog;
 
     //Firebase Auth
@@ -77,7 +77,19 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
 
     private static final int RC_SIGN_IN = 1;
-    private GoogleApiClient mGoogleSignInClient;
+    private GoogleSignInClient mGoogleSignInClient;
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null)
+        {
+            SendUserToMainActivity();
+        }
+    }
 
 
     @Override
@@ -155,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        createRequest();
 
         google.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,78 +176,44 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void createRequest() {
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-
-        mGoogleSignInClient = new  GoogleApiClient.Builder(this)
-                .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult)
-                    {
-                        Toast.makeText(LoginActivity.this, "Connection with Google SignIn Failed: ", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-
     private void signIn() {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleSignInClient);
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        //callbackManager.onActivityResult(requestCode, resultCode, data);
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN)
-        {
-            progressDialog.setTitle("Please wait...");
-            progressDialog.setMessage("While create setup and authenticate your google account...");
-            progressDialog.show();
-            progressDialog.setCanceledOnTouchOutside(false);
-
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-
-            /*GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getActivity());
-            if (acct != null) {
-                String personName = acct.getDisplayName();
-                String personGivenName = acct.getGivenName();
-                String personFamilyName = acct.getFamilyName();
-                String personEmail = acct.getEmail();
-                String personId = acct.getId();
-                Uri personPhoto = acct.getPhotoUrl();
-            }*/
-
-            if (result.isSuccess())
-            {
-                GoogleSignInAccount account = result.getSignInAccount();
-                firebaseAuthWithGoogle(account);
-                Toast.makeText(this, "Wait, While authenticate with Google Account...", Toast.LENGTH_SHORT).show();
-            }
-            else
-            {
-                Toast.makeText(this, "Connection Error occurred:", Toast.LENGTH_SHORT).show();
-                progressDialog.dismiss();
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                // ...
             }
         }
     }
 
-    private Context getActivity() {
-        return null;
-    }
-
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
-
-        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -243,21 +221,20 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
                             SendUserToMainActivity();
-                            progressDialog.dismiss();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            String message = task.getException().toString();
-                            SendUserToLoginActivity();
-                            Toast.makeText(LoginActivity.this, "Connection Error Occurred: "+ message, Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Sorry Authentication Failed...", Toast.LENGTH_SHORT).show();
                         }
-
+                        // ...
                     }
                 });
     }
 
+    private Context getActivity() {
+        return null;
+    }
 
     private void loginUserAccount(String email, String password) {
         //just validation
@@ -307,17 +284,7 @@ public class LoginActivity extends AppCompatActivity {
     /** checking if user exist then direct login and
      * go to main-activity. */
 
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
 
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null)
-        {
-            SendUserToMainActivity();
-        }
-    }
 
     /** checking email verified or NOT */
     private void checkVerifiedEmail() {

@@ -9,10 +9,11 @@
     >
 
     <include
-        android:id="@+id/govt_toolbar"
-        layout="@layout/all_app_bar_layout"
+        layout="@layout/content_media_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
-    <VideoView
+    <!--<VideoView
         android:id="@+id/govt_video"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -20,6 +21,6 @@
         android:layout_below="@+id/govt_toolbar"
         android:layout_margin="8dp"
         />
-
+-->
 
 </RelativeLayout>

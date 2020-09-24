@@ -22,20 +22,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".GovtAndPvtSector.AllPrivateIndustriesDetailsActivity"
+            android:parentActivityName=".GovtAndPvtSector.PrivateSectorActivity"
+            />
+        <activity
+            android:name=".GovtAndPvtSector.PvtEducationPakActivity"
+            android:parentActivityName=".GovtAndPvtSector.GovtSectorActivity" />
+        <activity
+            android:name=".GovtAndPvtSector.AllSchoolsOfPakActivity"
+            android:parentActivityName=".GovtAndPvtSector.GovtSectorActivity" />
+        <activity
+            android:name=".GovtAndPvtSector.AllCollegesOfPakActivity"
+            android:parentActivityName=".GovtAndPvtSector.GovtSectorActivity" />
+        <activity
+            android:name=".GovtAndPvtSector.Educational_institutes_info"
+            android:parentActivityName=".GovtAndPvtSector.GovtSectorActivity" />
+        <activity
             android:name=".WebLinks.AppInfoActivity"
             android:label="@string/title_activity_app_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".Home.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WebLinks.TermsConditionsActivity"
             android:label="@string/title_activity_terms_conditions"
+            android:parentActivityName=".Helping.HelpingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WebLinks.ContactUsActivity"
             android:label="@string/title_activity_contact_us"
+            android:parentActivityName=".Helping.HelpingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WebLinks.FAQActivity"
             android:label="@string/title_activity_f_a_q"
+            android:parentActivityName=".Helping.HelpingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GovtAndPvtSector.PrivateSectorActivity"
@@ -130,10 +150,11 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".AboutUs.AboutAppActivity"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".Home.MainActivity" />
+            android:parentActivityName=".Helping.HelpingActivity" />
         <activity
             android:name=".Startup.IntroActivity"
             android:configChanges="orientation|screenSize" />
